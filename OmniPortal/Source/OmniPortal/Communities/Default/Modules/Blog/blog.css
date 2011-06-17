@@ -1,0 +1,80 @@
+/*****************************************
+	BLOG
+*****************************************/
+
+#blog {
+	padding: 5px;
+	font-family: Georgia,Serif;
+	display: block;
+}
+
+#blog h1.blog-title {
+	text-align: center;
+	font-size: 200%;
+}
+
+#blog div.blog-break {
+	margin: .75em 0 .75em 0;
+	padding: 0;
+	height: 1px;
+	line-height: 0;
+	border-bottom: dashed 1px #2b8ebc;
+}
+
+/*****************************************
+	POST
+*****************************************/
+
+#blog .post{
+}
+
+#blog .post-header {
+	border-left: solid 1px #cc6600;
+	border-top: solid 1px #cc6600;
+	padding: 10px;
+	margin: 0;
+}
+
+#blog .post-body {
+	padding: 0 20px 0 20px;
+	margin: 0;
+}
+
+#blog .post-footer {
+	border-left: solid 1px #cc6600;
+	border-bottom: solid 1px #cc6600;
+	padding: 10px;
+	margin: 0;
+}
+
+#blog .post-title {
+	font-size: 160%;
+	font-weight: lighter;
+	color: #000000;
+	text-align: left;
+	padding: 0;
+	margin: 0;
+}
+
+#blog .post-title a, 
+#blog .post-title a:visited, 
+#blog .post-title strong {
+	display: block;
+	text-decoration: none;
+	color: #cc6600;
+}
+  
+#blog .post-title a:hover {
+	text-decoration: underline;
+}
+
+#blog .post-date, 
+#blog .post-footer {
+	margin: 0 0 .75em 0;
+	font-size: 78%;
+	line-height: 1.4em;
+	font-family: "Trebuchet MS",Trebuchet,Arial,Verdana,Sans-serif;
+	text-transform: uppercase;
+	letter-spacing: .2em;
+	color: #999999;
+}

@@ -1,0 +1,397 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F26CF465-ECA9-43CB-AB25-7EC557CFA0CE}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>ManagedFusion</AssemblyName>
+    <AssemblyOriginatorKeyFile>ManagedFusion.snk</AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ManagedFusion</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <SignAssembly>true</SignAssembly>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\Release\ManagedFusion.xml</DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\CommunityConfigurationProviderCollection.cs" />
+    <Compile Include="Configuration\CommunityConfigurations.cs" />
+    <Compile Include="Configuration\CommunityConfigurationManagerSection.cs" />
+    <Compile Include="Configuration\CommunityPaths.cs" />
+    <Compile Include="Configuration\Flat\FlatConfigurationProvider.cs" />
+    <Compile Include="Configuration\Flat\FlatPathProvider.cs" />
+    <Compile Include="Configuration\PortalSettings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>PortalSettings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Databases.cs" />
+    <Compile Include="Data\DatabaseManagerSection.cs" />
+    <Compile Include="Data\DatabaseProvider.cs" />
+    <Compile Include="Data\DatabaseProviderCollection.cs" />
+    <Compile Include="FormActionFilter.cs" />
+    <Compile Include="Configuration\CommunityPathProviderCollection.cs" />
+    <Compile Include="Configuration\CommunityPathManagerSection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CacheManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\Folder\FolderConfigurationProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\CommunityConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\CommunityConfigurationCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\CommunityConfigurationProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\ManagedFusionSectionGroup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\PortalDatabaseProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Containers\ContainerHolder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PortalPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Configuration\ModuleConfigurationDocument.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modules\Configuration\ConfigurationPage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modules\Configuration\ConfigurationSetup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modules\Configuration\ConfigurationTask.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modules\ErrorEvent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modules\LoadModuleEvent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modules\LoadSyndicationEvent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modules\ModuleAdminAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modules\ModuleAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modules\ModuleBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PageBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Portlets\PortletAdminAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Portlets\PortletAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Portlets\PortletUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SecureSkinAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\UnauthorizedAccessException.cs" />
+    <Compile Include="Security\NotAuthenticatedIdentity.cs" />
+    <Compile Include="Security\Portal\PortalPortletSecurityProvider.cs" />
+    <Compile Include="Security\PortletSecurity.cs" />
+    <Compile Include="Security\PortletSecurityManagerSection.cs" />
+    <Compile Include="Security\PortletSecurityProvider.cs" />
+    <Compile Include="Security\PortletSecurityProviderCollection.cs" />
+    <Compile Include="Security\Permissions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\Portal\PortalSectionSecurityProvider.cs" />
+    <Compile Include="Security\SectionSecurity.cs" />
+    <Compile Include="Security\SectionSecurityManagerSection.cs" />
+    <Compile Include="Security\SectionSecurityProvider.cs" />
+    <Compile Include="Security\SectionSecurityProviderCollection.cs" />
+    <Compile Include="SkinAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SkinnedUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SkinnedWebControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExpirationType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\Folder\FolderPathProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\CommunityPathProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PortalHandlerFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PortalModule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PortalProperties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Security\PortalRole.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Syndication\AtomFeed\AtomFeed.cs" />
+    <Compile Include="Syndication\AtomFeed\AtomFeedHandler.cs" />
+    <Compile Include="Syndication\AtomFeed\AtomFeedProvider.cs" />
+    <Compile Include="Syndication\Category.cs" />
+    <Compile Include="Syndication\ChangeFrequency.cs" />
+    <Compile Include="Syndication\Content.cs" />
+    <Compile Include="Syndication\CustomField.cs" />
+    <Compile Include="Syndication\Entry.cs" />
+    <Compile Include="Syndication\Feed.cs" />
+    <Compile Include="Syndication\LinkRelationship.cs" />
+    <Compile Include="Syndication\Sitemap\Sitemap.cs" />
+    <Compile Include="Syndication\Sitemap\SitemapHandler.cs" />
+    <Compile Include="Syndication\Sitemap\SitemapProvider.cs" />
+    <Compile Include="Syndication\Source.cs" />
+    <Compile Include="Syndication\Generator.cs" />
+    <Compile Include="Syndication\Link.cs" />
+    <Compile Include="Syndication\Person.cs" />
+    <Compile Include="Syndication\Text.cs" />
+    <Compile Include="PortalSiteMapProvider.cs" />
+    <Compile Include="Syndication\Syndications.cs" />
+    <Compile Include="Syndication\SyndicationManagerSection.cs" />
+    <Compile Include="Syndication\SyndicationProvider.cs" />
+    <Compile Include="Syndication\SyndicationProviderCollection.cs" />
+    <Compile Include="Syndication\BaseSyndicationHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Syndication\ISyndication.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Syndication\SitemapIndex\SitemapIndex.cs" />
+    <Compile Include="Syndication\SitemapIndex\SitemapIndexHandler.cs" />
+    <Compile Include="Syndication\SitemapIndex\SitemapIndexProvider.cs" />
+    <Compile Include="Syndication\CacheItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Syndication\SyndicationWriter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Collections\CommunityCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Collections\CommunityPropertyCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Collections\CommunityThemeCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Collections\ContainerCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Collections\ModuleCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Collections\PortalTypeCollection.cs" />
+    <Compile Include="Types\Collections\PortletCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Collections\PortletModuleDataCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Collections\PortletPropertyCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Collections\RolesPermissionsDictionary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Collections\RolesTasksDictionary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Collections\SectionCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Collections\SectionMetaPropertyCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Collections\SectionModuleDataCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Collections\SectionPropertyCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Collections\SiteCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Collections\StyleCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\Collections\ThemeCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\CommunityInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\ContainerInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\ModuleInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\PortalType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\PortletInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\PortletModule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\RootSection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\SectionInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\SectionModule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\SiteInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\StyleInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\ThemeInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\PortalInitializationException.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Configuration\PortalSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>PortalSettings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ManagedFusion.snk" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

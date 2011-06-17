@@ -1,0 +1,68 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D5BAC016-C04C-43EB-8A2B-2062A21D5660}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OmniPortal.Modules.Blog</RootNamespace>
+    <AssemblyName>OmniPortal.Modules.Blog</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\AdminUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BlogModule.cs" />
+    <Compile Include="Data\BlogDatabaseProvider.cs" />
+    <Compile Include="Data\BlogItem.cs" />
+    <Compile Include="Data\SqlServer2000\Blog_Categories.cs" />
+    <Compile Include="Data\SqlServer2000\Blog_CategoryPostLink.cs" />
+    <Compile Include="Data\SqlServer2000\Blog_Posts.cs" />
+    <Compile Include="Data\SqlServer2000\BlogSqlServerProvider.cs" />
+    <Compile Include="Data\SqlServer2000\ConnectionProvider.cs" />
+    <Compile Include="Data\SqlServer2000\DBInteractionBase.cs" />
+    <Compile Include="Data\SqlServer2000\Posts.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\ManagedFusion\Source\ManagedFusion\ManagedFusion.csproj">
+      <Project>{F26CF465-ECA9-43CB-AB25-7EC557CFA0CE}</Project>
+      <Name>ManagedFusion</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Module.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\SqlServer2000\Scripts\Blog-StoredProcedures.sql" />
+    <None Include="Data\SqlServer2000\Scripts\Blog-StoredProcedures-2.sql" />
+    <None Include="Data\SqlServer2000\Scripts\Blog-Tables.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

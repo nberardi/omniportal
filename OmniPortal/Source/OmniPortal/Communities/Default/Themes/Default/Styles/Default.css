@@ -1,0 +1,202 @@
+html, body{
+    color: #000000;
+    margin: 0;
+    padding: 10px;
+    font: normal .85em Verdana, sans-serif;
+    line-height: 1.4em;
+    background: #ffffff url(../Images/background.gif) repeat fixed;
+}
+
+#pagewidth {
+	max-width: 800px;
+	min-width: 800px;
+	width:800px; 
+	text-align:left; 
+	margin-left:auto; 
+	margin-right:auto; 
+}
+
+/************************************************
+    GENERAL STYLE SETUP
+************************************************/
+
+#header { 
+	height:150px; 
+	width:100%; 
+}
+
+#contentBody, #navigation { 
+	background-color: #ffffff;
+	border-left: solid 5px #000000;
+	border-right: solid 5px #000000;
+}
+ 
+#footer {
+	height: 60px; 
+	width: 100%; 
+}
+ 
+.clr {
+	clear: both;
+}
+
+/************************************************
+    SITE NAVIGATION
+************************************************/
+
+#navigation {
+	width: 790px;	/* must be pagewidth - (left + right borders) */
+}
+
+#navigation .links {
+	background-color: #e4e4e4;
+	border: solid 1px #a1a1a1;
+	margin: 0px 3px 0px 3px;
+	padding: 6px 3px 6px 3px;
+}
+
+#navigation .links a {
+	color: #000000;
+	border: solid 1px #a1a1a1;
+	font-weight: bold;
+	margin: 0;
+	padding: 2px;
+	text-decoration: none;
+}
+
+#navigation
+ .links a:link,
+ .links a:visited,
+ .links a:active {
+	background-color: #c4c4c4;
+	color: #000000;
+}
+
+#navigation .links a:hover {
+	background-color: #a1a1a1;
+	color: #ffffff;
+}
+
+/************************************************
+	CONTENT BODY
+************************************************/
+
+#contentBody {
+	width: 780px;	/* must be pagewidth - (left + right borders) - (padding * 2) */
+	padding: 5px;
+}
+
+#contentBody h1 {
+	font-size: 200%;
+}
+
+#contentBody h2 {
+	font-size: 150%;
+}
+
+#contentBody h3 {
+	font-size: 125%;
+}
+
+/************************************************
+	RIGHT COLUMN
+************************************************/
+
+#rightcol {
+	max-width: 230px;
+	min-width: 230px;
+	width: 230px;
+	float: right;
+	position: relative;
+	font-size: 90%;
+	margin-left: 5px;
+	padding: 5px;
+	background-color: #e4e4e4;
+	border: solid 1px #a1a1a1;
+}
+
+#rightcolheader {
+	padding: 0 5px 5px 5px;
+	text-align: right;
+}
+
+#rightcolheader a {
+	font-size: 85%;
+	color: #a1a1a1;
+	text-decoration: none;
+}
+
+#rightcolheader a:hover {
+	text-decoration: underline;
+}
+
+#rightcol .portlet {
+	padding: 5px 5px 5px 5px;
+	margin-bottom: 20px;
+	background-color: #a1a1a1;
+	border: dashed 1px #000000;
+}
+
+#rightcol .portlet h1 {
+	color: #ffffff;
+	border-bottom: 1px solid white;
+	font-variant: small-caps;
+	font-size: 120%;
+	padding: 0;
+	margin: 0 0 10px 0;
+}
+
+#rightcol .links {
+	margin: 0 0 10px 0;
+	padding: 0;
+	border: none;
+}
+
+#rightcol .links li {
+	margin: 0 10px 0 10px;
+	padding: 0;
+	list-style-type: none;
+}
+
+#rightcol .links a {
+	color: #444444;
+	display: block;
+	margin: 0;
+	padding: 2px;
+	font-size: 85%;
+	text-decoration: none;
+	border: solid 1px #a1a1a1;
+	background-color: Transparent;
+}
+
+#rightcol
+ .links a:link,
+ .links a:visited,
+ .links a:active {
+	border-color: #a1a1a1;
+	color: #444444;
+}
+
+#rightcol .links a:hover {
+	border-color: #cccccc;
+	color: #ffffff;
+}
+
+/************************************************
+   PRINTING STYLES
+************************************************/
+
+@media print {
+
+#contentBody { 
+	border-style: none;
+}
+
+#header,
+#navigation,
+#rightcol,
+#footer {
+	display:none;
+}
+
+}

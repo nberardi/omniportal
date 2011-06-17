@@ -1,0 +1,64 @@
+OmniPortal Install
+	by Nicholas Berardi
+	contact me <http://sourceforge.net/sendmessage.php?touser=405152>
+	get more info <http://www.omniportal.net>
+
+--------------------------------------------------------------------
+
+[1] Database
+[2] Website
+	[2.1] Setting Configuration Files.
+[3] Launch
+
+
+--------------------------------------------------------------------
+-- 1 -- Database:
+
+[1] Run Database.sql
+[2] Run Tables.sql
+[3] Run StoredProcedures.sql
+[4] Run StoredProcedures-2.sql
+[5] Run Data.sql
+[6] Run Blog-Tables.sql
+[7] Ruh Blog-StoredProcedures.sql
+[8] Run Blog-StoredProcedures-2.sql
+[9] Add user 'ASPNET' as 'public' and 'db_owner' in database 'OmniPortal'
+
+--------------------------------------------------------------------
+-- 2 -- Website:
+
+[1] Copy contents of the folder 'Website' and move to the web server root folder (i.e. c:\inetput\wwwroot\) or sub-folder of the root folder.
+[2] Open IIS.
+[3] Right click the name of the folder created in step 1 and select Properties.
+[4] Click the Create button under Applications Settings.
+[5] Click OK.
+
+-- 2.1 -- Setting Configuration Files:
+[1] Open Web.config for editing.
+[2] Under the 'ManagedFusion' tag set the 'databaseConnectionString' if your database isn't on the localhost.
+[3] Close and save Web.config.
+[4] Open {portal root}\Communities\1\Community.config for editing.
+[5] Under the 'settings' tag set the 'DatabaseConnectionString' if your database isn't on the localhost or the modules are stored in a different database.
+[6] Under the 'provider' tag go to the 'Authentication' provider.
+[7] Change the username 'admin' to something personal.
+[8] Create a new GUID.  You can do this in VS.Net (Tools > Create GUID) or there are many resources on the net to do this for you.
+[9] Create a password for this user.  You can do this by going to <http://www.aspnetresources.com/tools/pwdhash.aspx> and getting the hash of a password.  Make sure the password is in the same format as 'passwordFormat' on the 'credentials' tag.
+[10] Under the providers tag go to the 'Authorization' provider.
+[11] If you changed the GUID from above make sure you update the new GUID in the only user provided.  (This is the tag that gives the user defined roles.)
+[12] Under the providers tag go to the 'Profile' provider.
+[13] If you changed the GUID from above make sure you update the new GUID in the only user provided.  (This is the tag that gives the user profile attributes.)
+[14] Change the 'fname', 'lname', and 'email' to fit your profile.
+[15] Close and save Community.config.
+
+--------------------------------------------------------------------
+-- 3 -- Launch:
+
+[1] Open your website in the browser.
+[2] Report any errors, troubles, or suggestions to <http://sourceforge.net/tracker/?group_id=54624>
+
+--------------------------------------------------------------------
+
+Thank you for trying OmniPortal.  Some useful links for getting more help are:
+<http://www.omniportal.net>
+<http://sourceforge.net/projects/omniportal>
+<http://sourceforge.net/projects/managedfusion>

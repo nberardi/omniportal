@@ -1,0 +1,319 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{20A7A4F4-5126-4F73-9587-8C53CA46F39D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OmniPortal</RootNamespace>
+    <AssemblyName>OmniPortal</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Communities\1\Head.html" />
+    <Content Include="Communities\Default\Head.html" />
+    <Content Include="Communities\Default\Modules\Admin\Community.ascx" />
+    <Content Include="Communities\Default\Modules\Admin\Container.ascx" />
+    <Content Include="Communities\Default\Modules\Admin\Default.ascx" />
+    <Content Include="Communities\Default\Modules\Admin\Site.ascx" />
+    <Content Include="Communities\Default\Modules\Blog\Admin\admin.css" />
+    <Content Include="Communities\Default\Modules\Blog\Admin\Category.ascx" />
+    <Content Include="Communities\Default\Modules\Blog\Admin\Default.ascx" />
+    <Content Include="Communities\Default\Modules\Blog\blog.css" />
+    <Content Include="Communities\Default\Modules\Blog\Comment.ascx" />
+    <Content Include="Communities\Default\Modules\Blog\List.ascx" />
+    <Content Include="Communities\Default\Modules\Blog\Portlets\Admin.ascx" />
+    <Content Include="Communities\Default\Modules\Blog\Portlets\Calendar.ascx" />
+    <Content Include="Communities\Default\Modules\Blog\Portlets\Public.ascx" />
+    <Content Include="Communities\Default\Modules\Blog\Post.ascx" />
+    <Content Include="Communities\Default\Portlets\Login\Read.ascx" />
+    <Content Include="Communities\Default\Portlets\RssFeed\Edit.ascx" />
+    <Content Include="Communities\Default\Portlets\RssFeed\Read.ascx" />
+    <Content Include="Communities\Default\Portlets\RssFeed\Rss2-0.xsl" />
+    <Content Include="Communities\Default\Portlets\Template.ascx" />
+    <Content Include="Communities\Default\Themes\Default\Images\background.gif" />
+    <Content Include="Communities\Default\Themes\Default\Images\zigamorph-bottom.gif" />
+    <Content Include="Communities\Default\Themes\Default\Images\zigamorph-bottom.png" />
+    <Content Include="Communities\Default\Themes\Default\Images\zigamorph.png" />
+    <Content Include="Communities\Default\Themes\Default\Skin\Modules\Blog\Admin\admin.css" />
+    <Content Include="Communities\Default\Themes\Default\Skin\Pages\Head.html" />
+    <Content Include="Communities\Default\Themes\Default\Skin\Portlets\Login\Read.ascx" />
+    <Content Include="Communities\Default\Themes\Default\Styles\Default.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\OmniPortal.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OmniPortal.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\OmniPortal.es.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OmniPortal.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\OmniPortal.fr.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OmniPortal.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication\Form\FormAuthentication.cs" />
+    <Compile Include="Authentication\Form\FormAuthenticationActivator.cs" />
+    <Compile Include="Authentication\Form\FormUserIdentity.cs" />
+    <Compile Include="Authentication\Windows\WindowsAuthentication.cs" />
+    <Compile Include="Authentication\Windows\WindowsAuthenticationActivator.cs" />
+    <Compile Include="Authentication\Windows\WindowsUserIdentity.cs" />
+    <Compile Include="Communities\Default\Modules\Admin\Community.ascx.cs">
+      <DependentUpon>Community.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Communities\Default\Modules\Admin\Community.ascx.designer.cs">
+      <DependentUpon>Community.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Communities\Default\Modules\Admin\Container.ascx.cs">
+      <DependentUpon>Container.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Communities\Default\Modules\Admin\Container.ascx.designer.cs">
+      <DependentUpon>Container.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Communities\Default\Modules\Admin\Default.ascx.cs">
+      <DependentUpon>Default.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Communities\Default\Modules\Admin\Default.ascx.designer.cs">
+      <DependentUpon>Default.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Communities\Default\Modules\Admin\Site.ascx.cs">
+      <DependentUpon>Site.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Communities\Default\Modules\Admin\Site.ascx.designer.cs">
+      <DependentUpon>Site.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Communities\Default\Modules\Blog\Admin\Category.ascx.cs">
+      <DependentUpon>Category.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Communities\Default\Modules\Blog\Admin\Category.ascx.designer.cs">
+      <DependentUpon>Category.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Communities\Default\Modules\Blog\Admin\Default.ascx.cs">
+      <DependentUpon>Default.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Communities\Default\Modules\Blog\Admin\Default.ascx.designer.cs">
+      <DependentUpon>Default.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Communities\Default\Modules\Blog\Comment.ascx.cs">
+      <DependentUpon>Comment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Communities\Default\Modules\Blog\Comment.ascx.designer.cs">
+      <DependentUpon>Comment.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Communities\Default\Modules\Blog\List.ascx.cs">
+      <DependentUpon>List.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Communities\Default\Modules\Blog\List.ascx.designer.cs">
+      <DependentUpon>List.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Communities\Default\Modules\Blog\Portlets\Calendar.ascx.cs">
+      <DependentUpon>Calendar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Communities\Default\Modules\Blog\Portlets\Calendar.ascx.designer.cs">
+      <DependentUpon>Calendar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Communities\Default\Modules\Blog\Post.ascx.cs">
+      <DependentUpon>Post.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Communities\Default\Modules\Blog\Post.ascx.designer.cs">
+      <DependentUpon>Post.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Communities\Default\Portlets\Login\Read.ascx.cs">
+      <DependentUpon>Read.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Communities\Default\Portlets\Login\Read.ascx.designer.cs">
+      <DependentUpon>Read.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Communities\Default\Portlets\RssFeed\Edit.ascx.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Communities\Default\Portlets\RssFeed\Edit.ascx.designer.cs">
+      <DependentUpon>Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Communities\Default\Portlets\RssFeed\Read.ascx.cs">
+      <DependentUpon>Read.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Communities\Default\Portlets\RssFeed\Read.ascx.designer.cs">
+      <DependentUpon>Read.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Communities\Default\Themes\Default\Skin\Pages\Template.Master.cs">
+      <DependentUpon>Template.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Communities\Default\Themes\Default\Skin\Pages\Template.Master.designer.cs">
+      <DependentUpon>Template.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Communities\Default\Themes\NoTheme\Skin\Pages\Template.master.cs">
+      <DependentUpon>Template.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Communities\Default\Themes\NoTheme\Skin\Pages\Template.master.designer.cs">
+      <DependentUpon>Template.master</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AntiBotImage.cs" />
+    <Compile Include="Controls\DataGrid.cs" />
+    <Compile Include="Controls\DataGridItemRenderEvent.cs" />
+    <Compile Include="Controls\DynamicImage.cs" />
+    <Compile Include="Controls\GridView.cs" />
+    <Compile Include="Controls\GridViewRowRenderEvent.cs" />
+    <Compile Include="Controls\IDynamicImage.cs" />
+    <Compile Include="Controls\PermissionsCheckBoxList.cs" />
+    <Compile Include="Controls\RolesGrid.cs" />
+    <Compile Include="Controls\RolesGridEvent.cs" />
+    <Compile Include="Controls\SecureRepeater.cs" />
+    <Compile Include="Controls\SelectionList.cs" />
+    <Compile Include="Controls\TabControl.cs" />
+    <Compile Include="Filters\PngAlphaFilter.cs" />
+    <Compile Include="Filters\XHtmlFilter.cs" />
+    <Compile Include="Portlets\Xml\Xml.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Security\PortalMembershipProvider.cs" />
+    <Compile Include="Security\PortalRoleProvider.cs" />
+    <Compile Include="Users\UserInfo.cs" />
+    <Compile Include="Users\UserProfile.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Communities\1\Community.config" />
+    <Content Include="Communities\Default\Community.config" />
+    <None Include="Communities\Default\Themes\Default\Images\zigamorph.xcf" />
+    <None Include="Communities\Default\Themes\Default\Images\zigamorph2-bottom.xcf" />
+    <None Include="Communities\Default\Themes\Default\Images\zigamorph2.xcf" />
+    <Content Include="Communities\Default\Themes\NoTheme\Skin\Pages\Template.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\OmniPortal.es.resx">
+      <SubType>Designer</SubType>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>OmniPortal.es.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\OmniPortal.fr.resx">
+      <SubType>Designer</SubType>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>OmniPortal.fr.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\OmniPortal.resx">
+      <SubType>Designer</SubType>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>OmniPortal.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="Communities\Default\Themes\Default\Skin\Pages\Template.Master" />
+    <Content Include="Images\spacer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\ManagedFusion\Source\Databases\SqlServer2000\Provider\ManagedFusion-SqlServer2000.csproj">
+      <Project>{8EBE53E5-A163-43B9-8DE8-E5E88BDEB071}</Project>
+      <Name>ManagedFusion-SqlServer2000</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ManagedFusion\Source\ManagedFusion\ManagedFusion.csproj">
+      <Project>{F26CF465-ECA9-43CB-AB25-7EC557CFA0CE}</Project>
+      <Name>ManagedFusion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\Admin\Module-Admin.csproj">
+      <Project>{57CFCE6D-854A-422C-8198-8D393536DE7D}</Project>
+      <Name>Module-Admin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\Blog\Module-Blog.csproj">
+      <Project>{D5BAC016-C04C-43EB-8A2B-2062A21D5660}</Project>
+      <Name>Module-Blog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ExternalLink\Module-ExternalLink.csproj">
+      <Project>{B006A90B-D7BB-4F3D-AA3C-6A82FA17FB67}</Project>
+      <Name>Module-ExternalLink</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\SectionSummary\Module-SectionSummary.csproj">
+      <Project>{C29D1D7F-1DA4-4EFD-BF24-1BECDB9DA4A2}</Project>
+      <Name>Module-SectionSummary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\Static\Module-Static.csproj">
+      <Project>{68F475B3-8859-495C-AC11-4EE2896C6287}</Project>
+      <Name>Module-Static</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v8.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53243</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

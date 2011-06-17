@@ -1,0 +1,156 @@
+<%@ CodeTemplate Src="CommonTemplateCode.cs" Inherits="ManagedFusion.Templates.CommonTemplateCode" Language="C#" TargetLanguage="Text" Description="Domain model generator." Debug="true"%>
+
+<%@ Property Name="GenerateStoredProcedures" Type="System.Boolean" Default="True" Optional="True" Category="Generate" Description="" Editor="" EditorBase="" Serializer="" %>
+<%@ Property Name="GenerateViews" Type="System.Boolean" Default="True" Optional="True" Category="Generate" Description="" Editor="" EditorBase="" Serializer="" %>
+
+<%@ Property Name="TablesFolderName" Type="System.String" Default="" Optional="True" Category="Generate" Description="" Editor="" EditorBase="" Serializer="" %>
+<%@ Property Name="ViewsFolderName" Type="System.String" Default="" Optional="True" Category="Generate" Description="" Editor="" EditorBase="" Serializer="" %>
+
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="System.Design" %>
+
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.IO" %>
+<%@ Import Namespace="System.Collections.Generic" %>
+<script runat="template">
+	private string[] _templatesFileNames = new string[] {
+														"Entity.cst",
+														"EntityView.cst",
+														"EntityStoredProcedure.cst",
+														"ITable.cst",
+														"TableCollection.cst"
+														};
+	
+	// Compile and load all them in a collection
+	private System.Collections.Hashtable _codeTemplates = new System.Collections.Hashtable();
+
+	public CodeTemplate CompileTemplate(string templateName)
+	{
+		CodeTemplateCompiler compiler = new CodeTemplateCompiler(templateName);
+		compiler.Compile();
+		
+		if (compiler.Errors.Count == 0)
+		{
+			return compiler.CreateInstance();
+		}
+		else
+		{
+			for (int i = 0; i < compiler.Errors.Count; i++)
+			{
+				Response.WriteLine(compiler.Errors[i].ToString());
+			}
+			return null;
+		}
+	}
+	
+	// load all the templates	
+	public void LoadTemplates()
+	{	
+		foreach(string templatesFileName in _templatesFileNames)
+		{
+			string key = System.IO.Path.GetFileName(templatesFileName);
+			
+			_codeTemplates.Add(key, this.CompileTemplate(this.CodeTemplateInfo.DirectoryName + templatesFileName));
+		
+			// Set the properties that all the commonsqlcode inherited templates should set
+			try
+			{
+				((CodeSmith.Engine.CodeTemplate)_codeTemplates[key]).SetProperty("ConnectionStringName", ConnectionStringName);
+				
+				((CodeSmith.Engine.CodeTemplate)_codeTemplates[key]).SetProperty("GenerateEnums", GenerateEnums);
+				
+				((CodeSmith.Engine.CodeTemplate)_codeTemplates[key]).SetProperty("SourceTables", SourceTables);
+				((CodeSmith.Engine.CodeTemplate)_codeTemplates[key]).SetProperty("SourceViews", SourceViews);
+				((CodeSmith.Engine.CodeTemplate)_codeTemplates[key]).SetProperty("EnumTables", EnumTables);
+				
+				((CodeSmith.Engine.CodeTemplate)_codeTemplates[key]).SetProperty("CompanyName", CompanyName);
+				((CodeSmith.Engine.CodeTemplate)_codeTemplates[key]).SetProperty("CompanyUrl", CompanyUrl);
+
+				((CodeSmith.Engine.CodeTemplate)_codeTemplates[key]).SetProperty("Namespace", Namespace);
+				
+				((CodeSmith.Engine.CodeTemplate)_codeTemplates[key]).SetProperty("InsertUpdateSuffix", InsertUpdateSuffix);
+				((CodeSmith.Engine.CodeTemplate)_codeTemplates[key]).SetProperty("DeleteSuffix", DeleteSuffix);
+				((CodeSmith.Engine.CodeTemplate)_codeTemplates[key]).SetProperty("ProcedurePrefix", ProcedurePrefix);
+			}
+			catch(Exception) {}
+		}
+	}
+	
+	public CodeTemplate GetTemplate(string templateType)
+	{
+		return (CodeSmith.Engine.CodeTemplate)_codeTemplates[templateType];
+	}
+	
+	public void Go ()
+	{
+		LoadTemplates();
+		
+		/*
+		* Start Generation
+		*/
+		GetTemplate("ITable.cst").RenderToFile(OutputDirectory + "\\ITable.cs", true);
+		GetTemplate("TableCollection.cst").RenderToFile(OutputDirectory + "\\TableCollection.cs", true);
+		
+		List<string> generatedTables = new List<string>(SourceTables.Count);
+		
+		if (this.GenerateTables) {
+			if (Directory.Exists(OutputDirectory) == false)
+				Directory.CreateDirectory(OutputDirectory);
+				
+			if (Directory.Exists(OutputDirectory + "\\" + TablesFolderName) == false)
+				Directory.CreateDirectory(OutputDirectory + "\\" + TablesFolderName);	
+			
+			for (int i = 0; i < SourceTables.Count; i++) 
+			{
+				generatedTables.Add(SourceTables[i].Name);
+				GetTemplate("Entity.cst").SetProperty("SourceTable", SourceTables[i]);
+				GetTemplate("Entity.cst").RenderToFile(OutputDirectory + "\\" + TablesFolderName + "\\" + GetClassName(SourceTables[i].Name) + ".cs", true);
+			}
+		}
+		
+		if (this.GenerateEnums) {
+			if (Directory.Exists(OutputDirectory) == false)
+				Directory.CreateDirectory(OutputDirectory);
+				
+			if (Directory.Exists(OutputDirectory + "\\" + TablesFolderName) == false)
+				Directory.CreateDirectory(OutputDirectory + "\\" + TablesFolderName);	
+			
+			for (int i = 0; i < EnumTables.Count; i++)
+			{
+				if (generatedTables.Contains(EnumTables[i].Name))
+					continue;
+					
+				GetTemplate("Entity.cst").SetProperty("SourceTable", EnumTables[i]);
+				GetTemplate("Entity.cst").RenderToFile(OutputDirectory + "\\" + TablesFolderName + "\\" + GetClassName(SourceTables[i].Name) + ".cs", true);
+			}
+		}
+		
+		if (this.GenerateViews) {
+			if (Directory.Exists(OutputDirectory) == false)
+				Directory.CreateDirectory(OutputDirectory);
+			
+			if (Directory.Exists(OutputDirectory + "\\" + ViewsFolderName) == false)
+				Directory.CreateDirectory(OutputDirectory + "\\" + ViewsFolderName);
+				
+			for (int i = 0; i < SourceViews.Count; i++) 
+			{
+				GetTemplate("EntityView.cst").SetProperty("SourceTable", SourceViews[i]);
+				GetTemplate("EntityView.cst").RenderToFile(OutputDirectory + "\\" + ViewsFolderName + "\\" + GetClassName(SourceViews[i].Name) + ".cs", true);
+			}
+		}
+		
+		if (this.GenerateStoredProcedures) {
+			if (Directory.Exists(SqlOutputDirectory) == false)
+				Directory.CreateDirectory(SqlOutputDirectory);
+			
+			for (int i = 0; i < SourceTables.Count; i++) 
+			{
+				GetTemplate("EntityStoredProcedure.cst").SetProperty("SourceTable", SourceTables[i]);
+				GetTemplate("EntityStoredProcedure.cst").RenderToFile(SqlOutputDirectory + "\\" + GetClassName(SourceTables[i].Name) + ".sql", true);
+			}
+		}
+	}
+</script>
+<%
+	this.Go();
+%>

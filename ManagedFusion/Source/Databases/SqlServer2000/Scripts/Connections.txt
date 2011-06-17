@@ -1,0 +1,4 @@
+DBRefFolders found in your dbp file
+Connect String: Data Source=(local);Initial Catalog=ManagedFusion;Integrated Security=True;Application Name=ManagedFusion
+Provider: Microsoft SQL Server
+

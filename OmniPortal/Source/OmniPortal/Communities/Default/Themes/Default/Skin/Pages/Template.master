@@ -1,0 +1,88 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Template.master.cs" Inherits="OmniPortal.Communities.Default.Themes.Default.Skin.Pages.Template" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>Untitled Page</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+		<div id="pagewidth" >
+<!-- Header -->
+			<div id="header" ><img src="<%=ManagedFusion.Common.Path.GetImagePath("zigamorph.png") %>" alt="Mambo" width="800" height="150" /></div>
+<!-- /Header -->
+
+<!-- Navigation -->
+			<asp:Repeater ID="topNavRepeater" Runat="server" DataSource="<%# ManagedFusion.SiteInfo.Current.ConnectedSection.Children %>">
+				<HeaderTemplate>
+ 			<div id="navigation">
+ 				<div class="links">
+					<a href="<%# ManagedFusion.Common.Path.GetPortalUrl("/") %>">Home</a></HeaderTemplate>
+				<ItemTemplate>
+					<a href="<%# DataBinder.Eval(Container.DataItem, "UrlPath") %>"><%# DataBinder.Eval(Container.DataItem, "Title") %></a></ItemTemplate>
+				<FooterTemplate>
+				</div>
+			</div>
+				</FooterTemplate>
+			</asp:Repeater>
+<!-- /Navigation -->
+
+			<div id="contentBody">
+				<div id="rightcol">
+					<script language="javascript" type="text/javascript">
+						function CloseRightColumn() {
+							document.getElementById("rightcol").style.display = "none";
+						}
+					</script>	
+					<div id="rightcolheader"><a href="#" onclick="CloseRightColumn();">close</a></div>
+				
+<!-- Children -->
+					<asp:Repeater ID="childrenRepeater" Runat="server" DataSource="<%# SectionInformation.Children %>">
+						<HeaderTemplate>
+					<div class="portlet">
+						<h1>Sub-Sections</h1>
+						<ul class="links" title="sub-sections">
+							<li><a href="<%# SectionInfo.Parent.UrlPath %>">Back One Level</a></li></HeaderTemplate>
+						<ItemTemplate>
+							<li><a href="<%# DataBinder.Eval(Container.DataItem, "UrlPath") %>"><%# DataBinder.Eval(Container.DataItem, "Title") %></a></li></ItemTemplate>
+						<FooterTemplate>
+						</ul>
+					</div>
+						</FooterTemplate>
+					</asp:Repeater>
+<!-- /Children -->
+
+<!-- Page Links -->
+					<asp:Repeater ID="innerMenuRepeater" Runat="server" DataSource="<%# InnerMenu.Keys %>">
+						<HeaderTemplate>
+					<div class="portlet">
+						<h1>Page Links</h1>
+						<ul class="links" title="page links">
+						</HeaderTemplate>
+						<ItemTemplate>
+							<li><a href="<%# InnerMenu.Get(Container.ToString()) %>"><%# Container %></a></li></ItemTemplate>
+						<FooterTemplate>
+						</ul>
+					</div>
+						</FooterTemplate>
+					</asp:Repeater>
+<!-- /Page Links -->
+
+					<asp:contentplaceholder id="Column0" runat="server" />
+				</div>
+
+				<asp:contentplaceholder ID="Main" Runat="server" />
+		 		
+ 				<div class="clr"></div>
+			</div>
+			
+<!-- Footer -->
+ 			<div id="footer"><img src="<%=ManagedFusion.Common.Path.GetImagePath("zigamorph-bottom.png") %>" alt="Mambo" width="800" height="60" /></div>
+<!-- /Footer -->
+			
+			<div class="clr"></div>
+		</div>
+    </form>
+</body>
+</html>

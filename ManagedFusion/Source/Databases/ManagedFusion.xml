@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<codeSmith>
+	<propertySet>
+		<property name="GenerateStoredProcedures">True</property>
+		<property name="GenerateTables">True</property>
+		<property name="GenerateViews">False</property>
+		<property name="TablesFolderName">Tables</property>
+		<property name="ConnectionStringName">ManagedFusion</property>
+		<property name="Namespace">ManagedFusion.Data.SqlServer2000</property>
+		<property name="CompanyName">ManagedFusion</property>
+		<property name="CompanyUrl">http://www.managedfusion.com</property>
+		<property name="InsertUpdateSuffix" />
+		<property name="DeleteSuffix">_Delete</property>
+		<property name="ProcedurePrefix">ManagedFusion_</property>
+		<property name="OutputDirectory">M:\Users\Nick\Projects\ManagedFusion\Source\Databases\SqlServer2000\Provider</property>
+		<property name="SqlOutputDirectory">M:\Users\Nick\Projects\ManagedFusion\Source\Databases\SqlServer2000\Scripts\Create Scripts\Stored Procedures</property>
+		<property name="SourceTables">
+			<connectionString>Data Source=(local);Initial Catalog=ManagedFusion;Integrated Security=true;Connection Timeout=1;</connectionString>
+			<providerType>SchemaExplorer.SqlSchemaProvider,SchemaExplorer.SqlSchemaProvider</providerType>
+			<tableList>
+				<table>
+					<owner>dbo</owner>
+					<name>Community</name>
+				</table>
+				<table>
+					<owner>dbo</owner>
+					<name>CommunityProperty</name>
+				</table>
+				<table>
+					<owner>dbo</owner>
+					<name>Container</name>
+				</table>
+				<table>
+					<owner>dbo</owner>
+					<name>ContainerPortletLink</name>
+				</table>
+				<table>
+					<owner>dbo</owner>
+					<name>Portlet</name>
+				</table>
+				<table>
+					<owner>dbo</owner>
+					<name>PortletProperty</name>
+				</table>
+				<table>
+					<owner>dbo</owner>
+					<name>PortletRole</name>
+				</table>
+				<table>
+					<owner>dbo</owner>
+					<name>Section</name>
+				</table>
+				<table>
+					<owner>dbo</owner>
+					<name>SectionContainerLink</name>
+				</table>
+				<table>
+					<owner>dbo</owner>
+					<name>SectionProperty</name>
+				</table>
+				<table>
+					<owner>dbo</owner>
+					<name>SectionRole</name>
+				</table>
+				<table>
+					<owner>dbo</owner>
+					<name>Site</name>
+				</table>
+			</tableList>
+		</property>
+	</propertySet>
+</codeSmith>

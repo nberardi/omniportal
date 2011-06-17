@@ -1,0 +1,38 @@
+# Microsoft Developer Studio Project File - Database Project
+Begin DataProject = "ManagedFusion-SqlServer2000-Scripts"
+   MSDTVersion = "80"
+   SccProjectName = "SAK"
+   SccLocalPath = "SAK"
+   SccAuxPath = "SAK"
+   SccProvider = "SAK"
+   Begin Folder = "Change Scripts"
+   End
+   Begin Folder = "Create Scripts"
+      Script = "Data.sql"
+      Script = "Database.sql"
+      Begin Folder = "Stored Procedures"
+         Script = "Community.sql"
+         Script = "CommunityProperty.sql"
+         Script = "Container.sql"
+         Script = "ContainerPortletLink.sql"
+         Script = "Portlet.sql"
+         Script = "PortletProperty.sql"
+         Script = "PortletRole.sql"
+         Script = "Section.sql"
+         Script = "SectionContainerLink.sql"
+         Script = "SectionProperty.sql"
+         Script = "SectionRole.sql"
+         Script = "Site.sql"
+      End
+      Script = "Tables.sql"
+   End
+   Begin DBRefFolder = "Database References"
+      Begin DBRefNode = "ManagedFusion"
+         ConnectStr = "Data Source=(local);Initial Catalog=ManagedFusion;Integrated Security=True;Application Name=ManagedFusion"
+         Provider = "{91510608-8809-4020-8897-FBA057E22D54}"
+         Colorizer = 5
+      End
+   End
+   Begin Folder = "Queries"
+   End
+End

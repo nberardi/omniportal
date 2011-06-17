@@ -1,0 +1,53 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Databases", "Databases", "{F26CAAD3-902F-4D9D-A222-A7CC86C9B9EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SqlServer2000", "SqlServer2000", "{F092C703-35C8-4F55-B548-E0298C3B3F70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagedFusion-SqlServer2000", "Source\Databases\SqlServer2000\Provider\ManagedFusion-SqlServer2000.csproj", "{8EBE53E5-A163-43B9-8DE8-E5E88BDEB071}"
+EndProject
+Project("{4F174C21-8C12-11D0-8340-0000F80270F8}") = "ManagedFusion-SqlServer2000-Scripts", "Source\Databases\SqlServer2000\Scripts\ManagedFusion-SqlServer2000-Scripts.dbp", "{EB448099-1C41-4301-B0D7-560975E1A5C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagedFusion", "Source\ManagedFusion\ManagedFusion.csproj", "{F26CF465-ECA9-43CB-AB25-7EC557CFA0CE}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://team.managedfusion.com:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Source\\Databases\\SqlServer2000\\Provider\\ManagedFusion-SqlServer2000.csproj
+		SccProjectTopLevelParentUniqueName1 = ManagedFusion.sln
+		SccProjectName1 = Source/Databases/SqlServer2000/Provider
+		SccLocalPath1 = Source\\Databases\\SqlServer2000\\Provider
+		SccProjectUniqueName2 = Source\\Databases\\SqlServer2000\\Scripts\\ManagedFusion-SqlServer2000-Scripts.dbp
+		SccProjectTopLevelParentUniqueName2 = ManagedFusion.sln
+		SccProjectName2 = Source/Databases/SqlServer2000/Scripts
+		SccLocalPath2 = Source\\Databases\\SqlServer2000\\Scripts
+		SccProjectUniqueName3 = Source\\ManagedFusion\\ManagedFusion.csproj
+		SccProjectName3 = Source/ManagedFusion
+		SccLocalPath3 = Source\\ManagedFusion
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8EBE53E5-A163-43B9-8DE8-E5E88BDEB071}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EBE53E5-A163-43B9-8DE8-E5E88BDEB071}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EBE53E5-A163-43B9-8DE8-E5E88BDEB071}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EBE53E5-A163-43B9-8DE8-E5E88BDEB071}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F26CF465-ECA9-43CB-AB25-7EC557CFA0CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F26CF465-ECA9-43CB-AB25-7EC557CFA0CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F26CF465-ECA9-43CB-AB25-7EC557CFA0CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F26CF465-ECA9-43CB-AB25-7EC557CFA0CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F092C703-35C8-4F55-B548-E0298C3B3F70} = {F26CAAD3-902F-4D9D-A222-A7CC86C9B9EE}
+		{8EBE53E5-A163-43B9-8DE8-E5E88BDEB071} = {F092C703-35C8-4F55-B548-E0298C3B3F70}
+		{EB448099-1C41-4301-B0D7-560975E1A5C3} = {F092C703-35C8-4F55-B548-E0298C3B3F70}
+	EndGlobalSection
+EndGlobal
